@@ -1,0 +1,344 @@
+1. Introducing Networking Device
+Networking: Network is a collaboration or connection of two or more zones or devices through
+a common linking method. The network allows the nodes to shares resources between the
+linked systems. This is applicable in telecommunication, internet and even offline data sharing.
+Computer Hardware: Computer hardware is a physical part of the laptop or computer used for
+storing data, connecting, viewing and listening. The use of computer hardware in networking is
+detailed.
+LAN and WAN devices: LAN, local area network is a collection of devices or computers
+connected to a common server. WAN or wide area network devices cover a huge amount of
+area as the network spans longer. The devices can be connected through satellite and leased
+line.
+Collision: In order to understand networking devices, knowledge of collision is important. A
+network collision occurs when two network devices tries to transmit the same data at the same
+point of time. If the network detects such a collision, it discards both the packets received.
+2. What is the use of network devices?
+Network devices or internetworking devices are used to establish a network connection inside
+the corporate environment. Take a look at the concept of internetworking devices and how they
+work.
+Figure
+In this image, HUB, Bridge and Switches are used to implement a switched network of the
+devices, while router is used to interconnect multiple switched networks.
+There are certain hardware devices used within the network to connect two or more computers
+or peripherals.
+• NIC
+• Repeater
+• HUB
+• Bridge
+• Switch
+• Gateway
+• Router
+• Modem
+The networking devices are intelligently designed to connect two or more computers through a
+data path. Apart from sharing files, these devices enable printers and fax machines sharing. The
+communicating devices set up a path that connects all computers in the network.
+2.1 NIC: NIC stands for network interface card. Sometimes it is also called by the name
+“network interface controller”. It is indeed a circuit board or a card that is installed in a computer
+so that it can be connected to a network. Actually, the network interface card provides the
+computer with a dedicated, full-time connection to a network. Personal computers and
+workstations on a local area network (LAN) typically contain a network interface card specifically
+designed for the LAN transmission technology.
+Also there is a WLAN (Wireless LAN) card as shown in the image below.
+2.2 Repeater: Repeater is a network device, which used to regenerate or replicate a signal. It
+removes the unwanted noise in an incoming signal. Unlike an analog signal, the original digital
+signal, even if weak or distorted, can be clearly perceived and restored. With analog
+transmission, signals are re-strengthened with amplifiers which unfortunately also amplify noise
+as well as information. Repeater operates at Layer 1 of OSI.
+2.3 HUB: Basically a hub is a common connection point for devices in a network. Hubs are
+commonly used to connect segments of a LAN. A hub contains multiple ports. When a packet
+arrives at one port, it is copied to the other ports so that all segments of the LAN can see all
+packets. HUB operate at Layer 1 of OSI.
+2.4 Bridge: Bridge devices inspect incoming network traffic and determine whether to forward
+or discard it according to its intended destination. An Ethernet bridge, for example, inspects
+each incoming Ethernet frame - including the source and destination MAC addresses, and
+sometimes the frame size - in making individual forwarding decisions. Bridge devices operate at
+the data link layer (Layer 2) of the OSI model.
+2.5 Switch: A switch is a very common types of networking device that channels coming data
+from any of multiple input ports to the specific output port that will take the data toward, its
+intended destination in a telecommunications network. In the traditional circuit-switched
+telephone network, one or more switches are used to set up a dedicated communication though
+temporary connection or circuit for data exchange between two or more network devices. On an
+Ethernet LAN, the switch determines from the physical device like MAC address in each
+incoming message frame which output port to forward it to and out of. In an Internet, a switch
+determines from the IP address in each packet, and the output port of switch is connected to the
+next part of the intended destination.
+2.5.1 Functions of a Switch
+A switch is a bigger, faster bridge. Every port on a switch or bridge is its own collision domain.
+Switches also perform the same functions as a bridge, but connect multiple network segments
+together; they have a large buffer memory with multi ports. Switches have a dedicated chip called
+ASIC for address learning to forward the Ethernet frames. They can also have different port
+speeds like Fast Ethernet or Gigabit.
+The following table illustrates the comparison between Bridging and LAN switching.
+Also, some of the common functions of bridges and switches are:
+• Both bridges and switches forward layer 2 broadcasts.
+• Both bridges and switches learn MAC addresses by examining the source address of
+each frame received.
+• Both bridges and switches make forwarding decisions based on layer 2 addresses.
+2.5.2 Important Functions of Layer 2 Switches
+Switches perform three important functions as follows:
+• Addresses Learning
+• The Forward/Filter Decision
+• Loop avoidance
+2.5.3 Address Learning
+When a new switch is powered on, it does not have a MAC-table populated in its memory. Once
+the host transmits data to other hosts, the switch broadcasts the frame to all the connected
+ports. When the other host replies, it learns the MAC address of both the hosts and stores it in
+the MAC table.
+In the aforementioned diagram, Device C sends data to Device A. The switch will broadcast to
+all the ports expect port fa0/3 since the address is learned. If device A replies, the switch will
+learn the MAC address of A and the port number is stored in the MAC table.
+After a switch has learned the MAC addresses of all the devices connected to it, it intelligently
+forwards unicast frames to the correct host by comparing the destination MAC of the frame with
+the addresses in its MAC table. When it finds a match, it then sends the frame to the respective
+port associated with it.
+Referring to the aforementioned diagram,
+When a frame is received in interface fa0/1, the switch will look in to its MAC table for address
+learning. Through the forward port, the address is learnt so that the switch does a unicast on the
+port fa0/2. This ensures that the frame is only forwarded out of the correct destination port.
+When a switch receives a broadcast frame coming into one of its ports, it will check for the correct
+listing of the source MAC in its MAC table or update the same if necessary and check the
+destination MAC of the frame for a match in the table.
+Since FF-FF-FF-FF-FF-FF matches the MAC of all hosts, the switch will flood the frame i.e. it
+sends out to every port so that very host will receive the same. At this point, the switch is acting
+like a hub.
+In case of a multicast, the switch deals with this process in the same way as a broadcast, flooding
+all ports to make sure that it reaches all the possible hosts in the group. This is inefficient because
+the traffic also hits those hosts who do not want the frame.
+2.5.4. Loop Avoidance
+Having multiple paths to destinations for the purpose of redundancy is a good design for a
+network. This enables the traffic to take an alternate link if one link is not performing.
+However, this feature can often cause a lot of problems on the network for switches.
+Example:
+If a broadcast is sent out of multiple links, it will flood all links and could result in a congested
+network.
+This congestion is known as a ‘Broadcast Storm’.
+Whenever an incorrect broadcast frame is sent, it receives multiple incorrect replies from different
+hosts and the broadcast process grows as further broadcasts are sent out. This will quickly cause
+network congestion and slowly affect the performance of a network.
+2.5.5 Spanning Tree Protocol
+Spanning Tree Protocol - STP
+The Spanning Tree Protocol is used to avoid looping in a switch. Looping could occur in a
+switched network at any time due to the multiple redundant paths to a destination.
+Switching loops create three major problems:
+Broadcast Storms: A broadcast storm occurs when a switch is overwhelmed by continuous
+broadcast traffic. When different hosts are sending/broadcasting data over multiple links, and the
+other network devices are re-broadcasting the data back to the multiple links in response, it
+eventually causes the whole network to go down and lead to a communication failure. It also
+makes the MAC Table unstable.
+MAC Table Instability: Instability of the MAC table causes a single MAC address to reach
+multiple ports, wherein, the switch is constantly updating the MAC table.
+Duplicate Frames: If multiple paths have the same destination MAC address, there is a greater
+possibility that the frame could be duplicated and sent to multiple paths which then create a switch
+loop.
+How does the Spanning Tree Protocol (STP) work?
+The Spanning Tree Protocol (STP) is a layer 2 protocol that ensures a loop-free topology for
+any switched Ethernet in LAN.
+The STP protocol is responsible for identifying active redundant links in the network. It puts
+forward one of these links in a blocking state, which prevents possible network loops.
+STP operates as follows:
+Spanning Tree Protocol enabled switches require a common point of view of the whole switch
+network topology. To achieve this, they exchange standardized frame messages called Bridge
+Protocol Data Unit (BPDU), that are transmitted using layer 2 multicast addresses like 01-80-c2-
+00-00-00.
+2.5.6 -STP Convergence Time
+STP Convergence Time:
+STP takes 50 seconds from blocking to the forwarding state.
+2.5.7 STP Port States
+STP Port States
+Blocking: Ports in the blocking state do not forward or receive any frame. The frames will be
+discarded on arriving to that port and this port will not learn any MAC addresses. However, the
+port listens to the BPDU message.
+Listening: The port in the listening state can send and receive the BPDU frames. However,
+listening ports do not forward any incoming frames. They also do not learn any MAC addresses.
+All Ethernet frames are discarded. The STP calculation of loop free topology takes place in this
+state.
+Learning: The port in the learning state already identifies its state4 in the STP domain. It will be
+learning the MAC addresses from the frames arriving at the port in order to populate the MAC
+address table. This avoids too much flooding when the port transitions to the forwarding state.
+However, the port will not forward any Ethernet frames.
+Forwarding: The port in the forwarding state will forward all Ethernet traffic as per the switch
+operation. Also, the port will process all incoming frames and will actively learn MAC addresses
+from the arriving traffic.
+Disabled: This is an administratively shutdown state. The port in this state does not participate in
+any STP operation.
+STP Convergence:
+Spanning Tree Protocol takes nearly 50 seconds for its implementation and converging of any
+topology changes. In simple words, whenever a topology change occurs in the network (e.g. a
+link goes down-up), no frame forwarding takes place for about 50 seconds until the STP
+convergence. This is a lot of inactive time, especially in large networks where topology changes
+may occur relatively more often.
+2.5.8 BPDU Guard
+If a switch is plugged into a switchport configured as Portfast (that is planned to connect
+computers or servers), it could change the STP topology without the knowledge of the
+administrator. It could even bring down the network!
+To protect this, BPDU Guard can be configured on the switchport using the
+‘Switch(config-if) #spanning-tree bpduguard enable’ command.
+2.5.9 Root Guard
+Root Guard prevents an unauthorized switch from advertising itself as a Root Bridge. If a BPDU
+superior to the Root Bridge is received on a port with Root Guard enabled, the port is placed in a
+root-inconsistent state.In this state, the port is essentially in a blocking state, and will not forward
+frames. The port can still listen for BPDUs.
+Root Guard is enabled on a per-port basis, and is disabled by default:
+Switch(config)# interface gi1/14
+Switch(config-if)# spanning-tree guard root
+2.5.10 Power Over Ethernet (PoE)
+It is a means of supplying electrical power from a switch port over ordinary data cabling to a
+connected powered device. Such as a VoIP handset or wireless access point. PoE is defined in
+two IEEE standards (Both rolled into 802.3-2018):
+• 802.3af – Powered devices can draw up to about 13W over the link. Power is supplied
+as 350mA@48V and limited to 15.4 W but the voltage drops over the maximum 100 feet of
+cable results in usable power of around 13 W.
+• 802.3at (PoE+) – Powered devices can draw up to about 25 W with a maximum
+current of 600 mA. Various proprietary schemes were used prior to the ratification of 802.3at.
+2.6 Gateway: A gateway is a network node which connects two networks in different protocols.
+Gateways can take several forms, including routers or computers and can perform a variety of
+tasks.
+These range from simply passing traffic on to the next hop on its path to offering complex traffic
+filtering, proxies or protocol translations at various network layers. The most common gateway
+is the internet gateway, which connects a home or enterprise network to the internet. An internet
+gateway also often acts as a security node, variously filling one or more security roles, such as
+proxy server.
+firewall or Network Address Translation (NAT) server. Software-Defined WAN (SD-WAN) and
+virtual WAN systems serve as gateways between an enterprise network and two or more Wide
+Area Networks (WANs).
+2.7 Router: Router is one of the most used networking devices used to sharing internet
+connection between two devices. The operation of router is complicate as it can be both
+software and hardware and operate at layer 3 of OSI.
+The connections established through router can be:
+2.8 Ethernet to Ethernet - In this scenario, the main router can either be Linksys or a third
+party and will be referred to as the main router. The second router should be Linksys and will be
+called secondary router. If you want to cascade a non-Linksys router to the main router, you
+need to call its manufacturer for support.
+2.9 MAN to WAN - Connecting one of the Ethernet ports of the main router (MAN) to the
+Internet port (WAN port) of the secondary router. This type of spilling requires the main router
+and the secondary router to have different IP segments. This connection makes it easier to
+identify which router the computers and other devices in the network are connected to since
+they will have different LAN IP segments. However, computers that are connected to the main
+router will not be able to communicate with the secondary router, and vice versa since there are
+two different networks. Before you connect a Linksys router to another router, make sure that
+both routers have different IP Addresses. This is necessary to avoid conflict and connectivity
+issues in the local network if they have similar IP Addresses.
+• Token ring to internet- Token ring local area network (LAN) technology is a
+communications protocol for local area networks.
+2.10 Modem: MODEM stands for modulator-demodulator. A modem is a device or program that
+enables a computer to transmit data over, for example, telephone or cable lines. Computer
+information is stored digitally, whereas information transmitted over telephone lines is
+transmitted in the form of analog waves. A modem converts between these two forms (analog to
+digital and vice versa).
+Figure – Connecting ISP modem to the Linksys Router, to enable internet access to the connected devices
+2.11 Difference between Hub and Switch:
+Hub Switch
+Layer 1 device Layer 2 device
+Does not recognize MAC Address Recognizes MAC Address
+Broadcast device, Slower in operation Unicast Device, faster in operation
+Cheap device Expensive device
+3. What is Topology?
+Network topology is the arrangement of the various elements (links, nodes, etc.) of a computer
+network. Essentially, it is the topological structure of a network and may be depicted physically or
+logically.
+Topologies are divided into two types. One is called physical topology & another one is logical
+topology.
+Physical topology is the placement of the various components of a network, including device
+location and cable installation, while logical topology illustrates how data flows within a network,
+regardless of its physical design.
+Distances between nodes, physical interconnections, transmission rates, or signal types may
+differ between two networks, yet their topologies may be identical.
+There are a number of reasons to understand about topology:
+• The network topology impacts performance
+• The network topology is a factor in determining the media type used to cable the network
+• The networking topology impacts the cost of cabling the network.
+• Some access methods work only with specific topologies.
+• Knowledge of network layout / topology helps to optimize the network performance and
+troubleshoot network performance issues.
+• The table shows the cable types associated with each topology.
+Topology Cable Type
+Linear bus Thin coaxial Thick coaxial
+Star bus Unshielded twisted pair (UTP)
+Ring Shielded twisted pair (STP) Unshielded twisted pair (UTP)
+Fiber optic (FDDI rings)
+3.1. Types of Topologies
+There are 6 different types of physical topologies. They are:
+• BUS topology
+• RING topology
+• STAR topology
+• MESH topology
+• TREE topology
+• HYBRID topology
+3.1.1 BUS topology
+Bus topology is a network where all the nodes are connected with each other with a single
+common cable. When one node wants to access another node on the network then it puts a
+message addressed to that device on the bus network.
+Advantages of BUS network:
+1. It is very easy to connect a node or peripheral in this network.
+2. Bus network requires less cable length than any other topologies.
+- Disadvantages of BUS network:
+1. As the total network is depended on a single cable so if any problem occurs in the main cable,
+the entire network shuts down.
+2. At the start & the end point of the main cable terminators are required to build up the network.
+3. This network cannot be used as a stand-alone solution in a large building.
+3.1.2 RING TOPOLOGY:
+When each device is serially connected in a closed ring pattern with a single cable then the
+network system is called ring topology. As a train crosses all the platforms to reach its
+destination, ring topology does the same to pass a message from one node to another node.
+Advantages of ring topology:
+1. The network does not do anything without order. It needs to access the token & the opportunity
+to transmit.
+2. In this network each & every node has equal access to resources.
+3. The performance does not get interrupted by any additional components.
+4. Network server is not needed to control the connection between nodes.
+Disadvantages of ring topology:
+1. In this ring network if any node breaks down then the entire network system stops working.
+2. The speed of transferring data is slower than any other topologies just because a packet of
+data passes through all the nodes between sender & receiver node.
+3. The entire network could be affected by moving, adding & changing of devices.
+3.1.3 STAR TOPOLOGY:
+In this configuration all nodes are connected to a central Hub with separated cables. Here the
+central node or hub acts like the main server & the other nodes which are connected to the
+central node, act like client devices.
+Advantages of star topology:
+1. In this type of network it is very easy to add or remove a node to the network system.
+2. Here if any fault occurs it is very easy to find out & fix it up.
+3. If anyone node faces problem, the rest nodes perform smoothly without effecting the whole
+network.
+Disadvantages of star topology:
+1. It is more expensive than any other topologies to build up the network because it requires
+excessive length of cable.
+2. The entire network goes down if the central node (hub) does not work properly & also if the
+other important nodes are disconnected from the network, example file server node stops working
+3. The central hub is expensive which makes the network more expensive.
+3.1.4 MESH TOPOLOGY:
+Here each & every network is interconnected with each other. It works independently.
+Advantages of Mesh topology:
+1. Adding or removing nodes in this network could be done easily without interrupting the other
+nodes & the network.
+2. Here the transmission of data is very easy because it transfers data from different nodes
+simultaneously.
+3. In this configuration transfer of data does not get affected by any peripherals because if one
+node fails there is always an alternative one.
+Disadvantages of Mesh topology:
+1. It is very hard to configure the network & also very difficult to maintain.
+2. Mesh topology is comparatively expensive when compared with other topologies like ring or
+star topology.
+3.1.5 TREE TOPOLOGY:
+A tree topology looks like the branches of the tree where each & every nodes are connected
+with its parent’s node. It is also called by the name star+bus topology.
+Advantages of tree topology:
+1. Here finding out any fault is very easy & not too hard to maintain.
+2. If one of the any nodes get damaged the other hierarchical nodes are not affected.
+3. It is very easy to extend the network as much as administrator wants.
+Disadvantages of tree topology:
+1. The network requires high maintenance.
+2. A lot of cable is required to establish the network system.
+3. Troubleshooting of problems is highly difficult.
+3.1.6 HYBRID TOPOLOGY:
+Hybrid topology is the combination of two or more different network topologies.
+This network is a mixture of both peer-to-peer & client-server network. It can be either wired or
+wireless network.
+Advantages of hybrid topology:
+1. Here in this network the troubleshooting is far better than any other topologies.
+2. This type of network is very easy to expand.
+Disadvantages of hybrid topology:
+1. The structure of the network is hard to understand.
+2. It is very expensive to build up the entire network because of the requirement of cables & other
+peripherals.
+3. Multi-station Access Unit MAU is required.

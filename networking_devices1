@@ -1,0 +1,110 @@
+3. What is Topology?
+Network topology is the arrangement of the various elements (links, nodes, etc.) of a computer
+network. Essentially, it is the topological structure of a network and may be depicted physically or
+logically.
+Topologies are divided into two types. One is called physical topology & another one is logical
+topology.
+Physical topology is the placement of the various components of a network, including device
+location and cable installation, while logical topology illustrates how data flows within a network,
+regardless of its physical design.
+Distances between nodes, physical interconnections, transmission rates, or signal types may
+differ between two networks, yet their topologies may be identical.
+There are a number of reasons to understand about topology:
+• The network topology impacts performance
+• The network topology is a factor in determining the media type used to cable the network
+• The networking topology impacts the cost of cabling the network.
+• Some access methods work only with specific topologies.
+• Knowledge of network layout / topology helps to optimize the network performance and
+troubleshoot network performance issues.
+• The table shows the cable types associated with each topology.
+Topology Cable Type
+Linear bus Thin coaxial Thick coaxial
+Star bus Unshielded twisted pair (UTP)
+Ring Shielded twisted pair (STP) Unshielded twisted pair (UTP)
+Fiber optic (FDDI rings)
+3.1. Types of Topologies
+There are 6 different types of physical topologies. They are:
+• BUS topology
+• RING topology
+• STAR topology
+• MESH topology
+• TREE topology
+• HYBRID topology
+3.1.1 BUS topology
+Bus topology is a network where all the nodes are connected with each other with a single
+common cable. When one node wants to access another node on the network then it puts a
+message addressed to that device on the bus network.
+Advantages of BUS network:
+1. It is very easy to connect a node or peripheral in this network.
+2. Bus network requires less cable length than any other topologies.
+- Disadvantages of BUS network:
+1. As the total network is depended on a single cable so if any problem occurs in the main cable,
+the entire network shuts down.
+2. At the start & the end point of the main cable terminators are required to build up the network.
+3. This network cannot be used as a stand-alone solution in a large building.
+3.1.2 RING TOPOLOGY:
+When each device is serially connected in a closed ring pattern with a single cable then the
+network system is called ring topology. As a train crosses all the platforms to reach its
+destination, ring topology does the same to pass a message from one node to another node.
+Advantages of ring topology:
+1. The network does not do anything without order. It needs to access the token & the opportunity
+to transmit.
+2. In this network each & every node has equal access to resources.
+3. The performance does not get interrupted by any additional components.
+4. Network server is not needed to control the connection between nodes.
+Disadvantages of ring topology:
+1. In this ring network if any node breaks down then the entire network system stops working.
+2. The speed of transferring data is slower than any other topologies just because a packet of
+data passes through all the nodes between sender & receiver node.
+3. The entire network could be affected by moving, adding & changing of devices.
+3.1.3 STAR TOPOLOGY:
+In this configuration all nodes are connected to a central Hub with separated cables. Here the
+central node or hub acts like the main server & the other nodes which are connected to the
+central node, act like client devices.
+Advantages of star topology:
+1. In this type of network it is very easy to add or remove a node to the network system.
+2. Here if any fault occurs it is very easy to find out & fix it up.
+3. If anyone node faces problem, the rest nodes perform smoothly without effecting the whole
+network.
+Disadvantages of star topology:
+1. It is more expensive than any other topologies to build up the network because it requires
+excessive length of cable.
+2. The entire network goes down if the central node (hub) does not work properly & also if the
+other important nodes are disconnected from the network, example file server node stops working
+3. The central hub is expensive which makes the network more expensive.
+3.1.4 MESH TOPOLOGY:
+Here each & every network is interconnected with each other. It works independently.
+Advantages of Mesh topology:
+1. Adding or removing nodes in this network could be done easily without interrupting the other
+nodes & the network.
+2. Here the transmission of data is very easy because it transfers data from different nodes
+simultaneously.
+3. In this configuration transfer of data does not get affected by any peripherals because if one
+node fails there is always an alternative one.
+Disadvantages of Mesh topology:
+1. It is very hard to configure the network & also very difficult to maintain.
+2. Mesh topology is comparatively expensive when compared with other topologies like ring or
+star topology.
+3.1.5 TREE TOPOLOGY:
+A tree topology looks like the branches of the tree where each & every nodes are connected
+with its parent’s node. It is also called by the name star+bus topology.
+Advantages of tree topology:
+1. Here finding out any fault is very easy & not too hard to maintain.
+2. If one of the any nodes get damaged the other hierarchical nodes are not affected.
+3. It is very easy to extend the network as much as administrator wants.
+Disadvantages of tree topology:
+1. The network requires high maintenance.
+2. A lot of cable is required to establish the network system.
+3. Troubleshooting of problems is highly difficult.
+3.1.6 HYBRID TOPOLOGY:
+Hybrid topology is the combination of two or more different network topologies.
+This network is a mixture of both peer-to-peer & client-server network. It can be either wired or
+wireless network.
+Advantages of hybrid topology:
+1. Here in this network the troubleshooting is far better than any other topologies.
+2. This type of network is very easy to expand.
+Disadvantages of hybrid topology:
+1. The structure of the network is hard to understand.
+2. It is very expensive to build up the entire network because of the requirement of cables & other
+peripherals.
+3. Multi-station Access Unit MAU is required.
